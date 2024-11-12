@@ -1,0 +1,144 @@
+/* Estilo global para el cuerpo */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #fafafa; /* Fondo claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del título principal */
+h1 {
+    color: #fff;
+    text-align: center;
+    background-color: #f2a7c6; /* Rosa suave */
+    padding: 20px;
+    margin: 0;
+    border-radius: 10px;
+    font-size: 2em;
+}
+
+/* Estilo del título de los filtros y secciones */
+h2 {
+    color: #ff5a8a; /* Rosa fuerte */
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+/* Estilo para los formularios */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los labels y inputs en los formularios */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 180px;
+    color: #333;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #f0b5d2; /* Rosa claro */
+    border-radius: 6px;
+}
+
+/* Estilo para las áreas de texto no editables */
+form p {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0;
+}
+
+/* Botón de envío */
+form button {
+    background-color: #f2a7c6; /* Rosa suave */
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ff5a8a; /* Rosa más fuerte al hacer hover */
+}
+
+/* Estilo para mensajes de error */
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+}
+
+/* Estilo de la tabla de resultados */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #f0b5d2; /* Rosa claro */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2d1e3; /* Rosa muy claro */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para los enlaces dentro de la tabla */
+table a {
+    color: #f2a7c6; /* Rosa suave */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table a:hover {
+    color: #ff5a8a; /* Rosa fuerte al hacer hover */
+}
+
+/* Estilo para el campo de fecha */
+input[type="date"] {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #f0b5d2;
+}
+
+/* Estilo para los botones de los formularios de consulta */
+form button[type="submit"] {
+    background-color: #ff7fb2; /* Rosa suave */
+}
+
+form button[type="submit"]:hover {
+    background-color: #f2a7c6; /* Cambio de color al hacer hover */
+}

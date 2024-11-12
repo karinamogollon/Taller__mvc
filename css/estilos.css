@@ -1,0 +1,111 @@
+/* Estilo global para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del título principal */
+h1 {
+    color: #333;
+    text-align: center;
+    background-color: #ff66b2; /* Fondo rosado */
+    padding: 20px;
+    margin: 0;
+}
+
+/* Estilo del título de los filtros */
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilo para los formularios de filtro */
+form {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 8px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los labels y inputs en el formulario */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 180px;
+}
+
+form input, form select, form button {
+    padding: 8px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Botón de filtro */
+form button {
+    background-color: #ff66b2; /* Botón rosado */
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #e55d99; /* Varia al hacer hover */
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo de los enlaces "Editar" */
+table a {
+    color: #000000; /* Color negro para el enlace */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table a:hover {
+    color: #9b59b6; /* Color violeta al pasar el mouse */
+}
+
+/* Estilo para las celdas de fechas */
+td {
+    font-size: 14px;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ff66b2;
+    color: white;
+    margin-top: 40px;
+}
