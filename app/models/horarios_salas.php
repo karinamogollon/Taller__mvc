@@ -37,8 +37,8 @@ class HorarioSala {
         $stmt->bindParam(':fecha', $fecha);
         $stmt->bindParam(':hora', $hora);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false; // Retorna true si hay disponibilidad
-    }
+        return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false;
+    } // Aquí se cierra correctamente el método verificarDisponibilidad
 
     // Crear nuevo horario de sala
     public function createHorario($data) {

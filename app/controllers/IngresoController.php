@@ -4,6 +4,8 @@ require_once __DIR__ . '/../models/Programa.php';
 require_once __DIR__ . '/../models/Responsable.php';
 require_once __DIR__ . '/../models/Sala.php';
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/horarios_salas.php';
+
 
 class IngresoController {
 
@@ -124,10 +126,10 @@ class IngresoController {
             $horaIngreso = $_POST['horaIngreso'];
             $idResponsable = intval($_POST['idResponsable']);
             $idSala = intval($_POST['idSala']);
-
+    
             // Verificar disponibilidad de la sala
             $salaDisponible = Sala::verificarDisponibilidad($idSala, $fechaIngreso, $horaIngreso);
-
+    
             if ($salaDisponible) {
                 // Preparar los datos para la creación
                 $data = [
@@ -139,10 +141,10 @@ class IngresoController {
                     'idResponsable' => $idResponsable,
                     'idSala' => $idSala
                 ];
-
+    
                 // Crear el ingreso
                 $resultado = Ingreso::createIngreso($data);
-
+    
                 if ($resultado) {
                     header('Location: index.php?action=index');
                     exit();
@@ -153,16 +155,16 @@ class IngresoController {
                 $error = "La sala seleccionada no está disponible en el horario solicitado.";
             }
         }
-
+    
         // Obtener programas, responsables y salas
         $programas = Programa::getAll();
         $responsables = Responsable::getAll();
         $salas = Sala::getAll();
-
+    
         // Pasar los datos a la vista de creación
         require __DIR__ . '/../views/ingresos/create.php';
     }
-
+    
     // Método para editar un ingreso
     public function edit() {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {

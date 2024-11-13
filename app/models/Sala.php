@@ -14,7 +14,8 @@ class Sala {
     public static function verificarDisponibilidad($idSala, $fecha, $horaIngreso) {
         $diaSemana = date('N', strtotime($fecha)); // 1 (Lunes) a 7 (Domingo)
         $horaIngresoTime = strtotime($horaIngreso);
-
+    
+        // Validar si la hora está en el rango permitido
         if ($diaSemana >= 1 && $diaSemana <= 5) { // Lunes a Viernes
             $horaInicioPermitido = strtotime("07:00");
             $horaFinPermitido = strtotime("20:50");
@@ -24,12 +25,11 @@ class Sala {
         } else { // Domingo
             return false; // No se permiten ingresos
         }
-
-        // Verificar si la hora de ingreso está dentro del horario permitido
+    
         if ($horaIngresoTime < $horaInicioPermitido || $horaIngresoTime > $horaFinPermitido) {
-            return false;
+            return false; // Hora fuera de horario permitido
         }
-
+    
         // Verificar si la sala está ocupada en el horario solicitado
         $db = Database::getConnection();
         $query = "SELECT COUNT(*) as total FROM ingresos 
@@ -42,11 +42,13 @@ class Sala {
             'idSala' => $idSala,
             'fecha' => $fecha,
             'horaIngreso' => $horaIngreso,
-            'horaIngreso2' => $horaIngreso 
+            'horaIngreso2' => $horaIngreso
         ]);
         $resultado = $stmt->fetch(PDO::FETCH_OBJ);
+        
         return $resultado->total == 0;
     }
+    
 
     // Obtener una sala por su ID
     public static function getSalaById($id) {

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar o Editar Ingreso</title>
     <link rel="stylesheet" href="css/estilos2.css"> 
+
+    <title>Registrar o Editar Ingreso</title>
 </head>
 <body>
     <h1>Editar Ingreso</h1>
