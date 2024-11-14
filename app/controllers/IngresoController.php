@@ -6,7 +6,6 @@ require_once __DIR__ . '/../models/Sala.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/horarios_salas.php';
 
-
 class IngresoController {
 
     // Método principal para manejar las acciones
@@ -69,13 +68,14 @@ class IngresoController {
         // Preparar y ejecutar la consulta
         $statement = $pdo->prepare($query);
 
-        // Vincular parámetros de los filtros
+        // Crear variables intermedias para evitar el error de referencia en bindParam
         if ($fechaInicio && $fechaFin) {
             $statement->bindParam(':fechaInicio', $fechaInicio);
             $statement->bindParam(':fechaFin', $fechaFin);
         }
         if ($codigoEstudianteFiltro) {
-            $statement->bindParam(':codigoEstudianteFiltro', "%$codigoEstudianteFiltro%");
+            $codigoEstudianteFiltroLike = "%$codigoEstudianteFiltro%";
+            $statement->bindParam(':codigoEstudianteFiltro', $codigoEstudianteFiltroLike);
         }
         if ($idProgramaFiltro) {
             $statement->bindParam(':idProgramaFiltro', $idProgramaFiltro);

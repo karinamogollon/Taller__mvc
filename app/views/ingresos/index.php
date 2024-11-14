@@ -12,7 +12,7 @@
     <a href="index.php?action=create">Registrar Nuevo Ingreso</a>
 
     <!-- Formulario de Filtro -->
-    <h2>Filtrar Ingresos</h2>
+    <h2>Filtrar Ingresos 1</h2>
     <form action="index.php?action=index" method="GET">
         <!-- Filtro por Rango de Fechas -->
         <label for="fechaInicio">Fecha Inicio:</label>
@@ -21,6 +21,11 @@
         <label for="fechaFin">Fecha Fin:</label>
         <input type="date" id="fechaFin" name="fechaFin" required><br>
 
+        <button type="submit">Filtrar</button>
+        </form>
+
+ <h3>Filtrar Ingresos 2</h3>
+ <form action="index.php?action=index" method="GET">
         <!-- Filtro por Código de Estudiante -->
         <label for="codigoEstudianteFiltro">Código del Estudiante:</label>
         <input type="text" id="codigoEstudianteFiltro" name="codigoEstudianteFiltro"><br>
@@ -77,6 +82,9 @@
                         <td><?= htmlspecialchars($ingreso->fechaModificacion) ?></td>
                         <td>
                             <a href="index.php?action=edit&id=<?= $ingreso->id ?>">Editar</a>
+                            <td>
+                            <a href="index.php?action=delete&id=<?= $ingreso->id ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar este ingreso?');">Eliminar</a>
+                        </td>
                         </td>
                     </tr>
                 <?php endforeach; ?>
